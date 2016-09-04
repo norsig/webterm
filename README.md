@@ -1,8 +1,8 @@
-Wetty = Web + tty
+Webterm
 -----------------
 
-Terminal over HTTP and HTTPS. Wetty is an alternative to
-ajaxterm/anyterm but much better than them because wetty uses ChromeOS'
+Terminal over HTTP and HTTPS. Webterm is an alternative to
+ajaxterm/anyterm but much better than them because webterm uses ChromeOS'
 terminal emulator (hterm) which is a full fledged implementation of
 terminal emulation written entirely in Javascript. Also it uses
 websockets instead of Ajax and hence better response time.
@@ -14,9 +14,9 @@ hterm source - https://chromium.googlesource.com/apps/libapps/+/master/hterm/
 Install
 -------
 
-*  `git clone https://github.com/krishnasrinivas/wetty`
+*  `git clone https://github.com/norsig/webterm`
 
-*  `cd wetty`
+*  `cd webterm`
 
 *  `npm install`
 
@@ -35,7 +35,7 @@ SSH user using the `--sshuser` option.
 
 You can also specify the SSH user name in the address bar like this:
 
-  `http://yourserver:3000/wetty/ssh/<username>`
+  `http://yourserver:3000/webterm/ssh/<username>`
 
 Run on HTTPS:
 ------------
@@ -52,13 +52,13 @@ And then run:
 Again, if you run it as root it will launch `/bin/login`, else it will
 launch SSH to `localhost` or a specified host as explained above.
 
-Run wetty behind nginx:
+Run webterm behind nginx:
 ----------------------
 
 Put the following configuration in nginx's conf:
 
-    location /wetty {
-	    proxy_pass http://127.0.0.1:3000/wetty;
+    location /webterm {
+	    proxy_pass http://127.0.0.1:3000/webterm;
 	    proxy_http_version 1.1;
 	    proxy_set_header Upgrade $http_upgrade;
 	    proxy_set_header Connection "upgrade";
@@ -72,28 +72,13 @@ Put the following configuration in nginx's conf:
 
 If you are running `app.js` as `root` and have an Nginx proxy you have to use:
 
-    http://yourserver.com/wetty
+    http://yourserver.com/webterm
 
 Else if you are running `app.js` as a regular user you have to use:
 
-    http://yourserver.com/wetty/ssh/<username>
+    http://yourserver.com/webterm/ssh/<username>
 
-**Note that if your Nginx is configured for HTTPS you should run wetty without SSL.**
-
-Dockerized Version
-------------------
-
-This repo includes a Dockerfile you can use to run a Dockerized version of wetty.  You can run
-whatever you want!
-
-Just do:
-
-```
-    docker run --name term -p 3000 -dt nathanleclaire/wetty
-```
-
-Visit the appropriate URL in your browser (`[localhost|$(boot2docker ip)]:PORT`).  
-The username is `term` and the password is `term`.
+**Note that if your Nginx is configured for HTTPS you should run webterm without SSL.**
 
 Run wetty as a service daemon
 -----------------------------
@@ -101,11 +86,11 @@ Run wetty as a service daemon
 Install wetty globally with -g option:
 
 ```bash
-    $ sudo npm install wetty -g
-    $ sudo cp /usr/local/lib/node_modules/wetty/bin/wetty.conf /etc/init
-    $ sudo start wetty
+    $ sudo npm install webterm -g
+    $ sudo cp /usr/local/lib/node_modules/webterm/bin/webterm.conf /etc/init
+    $ sudo start webterm
 ```
 
-This will start wetty on port 3000. If you want to change the port or redirect stdout/stderr you should change the last line in `wetty.conf` file, something like this:
+This will start webterm on port 3000. If you want to change the port or redirect stdout/stderr you should change the last line in `webterm.conf` file, something like this:
 
-    exec sudo -u root wetty -p 80 >> /var/log/wetty.log 2>&1
+    exec sudo -u root webterm -p 80 >> /var/log/wetty.log 2>&1
