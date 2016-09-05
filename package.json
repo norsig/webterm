@@ -29,6 +29,6 @@
     "homepage": "https://github.com/norsig/webterm",
     "preferGlobal": "true",
     "bin": {
-        "wetty": "./bin/webterm.js"
+        "webterm": "./bin/webterm.js"
     }
 }
