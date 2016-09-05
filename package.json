@@ -1,0 +1,34 @@
+{
+    "name": "webterm",
+    "version": "1.0.0",
+    "dependencies": {
+        "express": "3.5.1",
+        "socket.io": "^1.3.7",
+        "pty.js": "^0.3.0",
+        "optimist": "^0.6"
+    },
+    "devDependencies": {
+        "load-grunt-tasks": "^3.0",
+        "grunt": "^0.4",
+        "grunt-shell": "^1.1",
+        "grunt-mkdir": "^0.1",
+        "grunt-git": "^0.3",
+        "grunt-contrib-clean": "^0.6"
+    },
+    "description": "Webterm = Web + terminal. Terminal access in browser over http/https ",
+    "main": "app.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/norsig/webterm.git"
+    },
+    "author": "Northern Signal SignalOS Team <signalos@northernsignal.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/norsig/webterm/issues"
+    },
+    "homepage": "https://github.com/norsig/webterm",
+    "preferGlobal": "true",
+    "bin": {
+        "webterm": "./bin/webterm.js"
+    }
+}
