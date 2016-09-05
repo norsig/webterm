@@ -1,15 +1,15 @@
 Webterm
 -----------------
+<a href="https://northernsignal.com"><img src="https://northernsignal.com/norsiglogo802.png"></a>
 
-Terminal over HTTP and HTTPS. Webterm is an alternative to
-ajaxterm/anyterm but much better than them because webterm uses ChromeOS'
+Terminal over HTTP and HTTPS. Webterm uses ChromeOS'
 terminal emulator (hterm) which is a full fledged implementation of
 terminal emulation written entirely in Javascript. Also it uses
-websockets instead of Ajax and hence better response time.
+websockets instead of Ajax.
 
 hterm source - https://chromium.googlesource.com/apps/libapps/+/master/hterm/
 
-![Wetty](/terminal.png?raw=true)
+![Webterm](/terminal.png?raw=true)
 
 Install
 -------
@@ -80,10 +80,10 @@ Else if you are running `app.js` as a regular user you have to use:
 
 **Note that if your Nginx is configured for HTTPS you should run webterm without SSL.**
 
-Run wetty as a service daemon
+Run webterm as a service daemon
 -----------------------------
 
-Install wetty globally with -g option:
+Install webterm globally with -g option:
 
 ```bash
     $ sudo npm install webterm -g
@@ -93,4 +93,4 @@ Install wetty globally with -g option:
 
 This will start webterm on port 3000. If you want to change the port or redirect stdout/stderr you should change the last line in `webterm.conf` file, something like this:
 
-    exec sudo -u root webterm -p 80 >> /var/log/wetty.log 2>&1
+    exec sudo -u root webterm -p 80 >> /var/log/webterm.log 2>&1
