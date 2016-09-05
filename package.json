@@ -1,6 +1,6 @@
 {
-    "name": "wetty",
-    "version": "0.2.0",
+    "name": "webterm",
+    "version": "1.0.0",
     "dependencies": {
         "express": "3.5.1",
         "socket.io": "^1.3.7",
@@ -15,20 +15,20 @@
         "grunt-git": "^0.3",
         "grunt-contrib-clean": "^0.6"
     },
-    "description": "Wetty = Web + tty. Terminal access in browser over http/https ",
+    "description": "Webterm = Web + terminal. Terminal access in browser over http/https ",
     "main": "app.js",
     "repository": {
         "type": "git",
-        "url": "git://github.com/krishnasrinivas/wetty.git"
+        "url": "git://github.com/norsig/webterm.git"
     },
-    "author": "Krishna Srinivas <krishna.srinivas@gmail.com> (https://github.com/krishnasrinivas)",
+    "author": "Northern Signal SignalOS Team <signalos@northernsignal.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/krishnasrinivas/wetty/issues"
+        "url": "https://github.com/norsig/webterm/issues"
     },
-    "homepage": "https://github.com/krishnasrinivas/wetty",
+    "homepage": "https://github.com/norsig/webterm",
     "preferGlobal": "true",
     "bin": {
-        "wetty": "./bin/wetty.js"
+        "wetty": "./bin/webterm.js"
     }
 }
